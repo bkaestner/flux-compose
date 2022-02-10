@@ -85,11 +85,11 @@ size_t flux_script_token_size(void *item) {
   case TokenKindFloat:
     return sizeof(TokenFloat);
   case TokenKindString:
-    return sizeof(TokenString) + ((TokenString *)token)->length + 1;
+    return sizeof(TokenString);
   case TokenKindSymbol:
-    return sizeof(TokenSymbol) + ((TokenSymbol *)token)->length + 1;
+    return sizeof(TokenSymbol);
   case TokenKindKeyword:
-    return sizeof(TokenKeyword) + ((TokenKeyword *)token)->length + 1;
+    return sizeof(TokenKeyword);
   default:
     PANIC("Unhandled token type: %d\n", token->kind);
   }
