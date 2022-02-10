@@ -32,7 +32,7 @@ size_t test_kind_size(void *item) {
   case TestKindFixed:
     return sizeof(TestFixed);
   case TestKindVariable:
-    return sizeof(TestVariable) + ((TestVariable *)item)->length + 1;
+    return sizeof(TestVariable);
   default:
     PANIC("Unexpected test item kind: %d", ((TestHeader *)item)->kind);
   }
